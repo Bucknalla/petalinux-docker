@@ -1,0 +1,25 @@
+diff --git a/axi_dma/data/axi_dma.tcl b/axi_dma/data/axi_dma.tcl
+index 2a1e78f..32e7aca 100644
+--- a/axi_dma/data/axi_dma.tcl
++++ b/axi_dma/data/axi_dma.tcl
+@@ -115,6 +115,20 @@ proc generate {drv_handle} {
+     } else {
+                 generate_clk_nodes $drv_handle $axiethernetfound $tx_chan $rx_chan
+     }
++    set dt_overlay [get_property CONFIG.dt_overlay [get_os]]
++    if {$dt_overlay} {
++    	set pnode "overlay2"
++    } else {
++    	set pnode "amba_pl"
++    }
++    set axidma_chrdev [add_or_get_dt_node -n "axidma_chrdev" -p $pnode]
++    set dma_channels "$dma_ip 0 \n"
++    for {set i 1} {$i <= $dma_count} {incr i} {
++    	append dma_channels "\t\t\t\t&$dma_ip $i"
++    }
++    hsi::utils::add_new_dts_param $axidma_chrdev "compatible" [format "xlnx,axidma-chrdev"] stringlist
++    hsi::utils::add_new_dts_param $axidma_chrdev "dmas" $dma_channels reference
++    hsi::utils::add_new_dts_param $axidma_chrdev "dma-names" [format "axidma-tx_channel"] stringlist
+ }
+ 
+ proc add_dma_channel {drv_handle parent_node xdma addr mode devid} {

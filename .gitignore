@@ -1,0 +1,10 @@
+bsp
+linux
+sdk
+pre-built
+build
+.Xil
+images
+*.jou
+*.log
+petalinux-v2018.3-final-installer.run

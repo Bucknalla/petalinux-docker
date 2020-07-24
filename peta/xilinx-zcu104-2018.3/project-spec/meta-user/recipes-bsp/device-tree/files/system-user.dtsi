@@ -1,0 +1,64 @@
+/include/ "system-conf.dtsi"
+/{
+
+amba_pl: amba_pl@0 {
+    #address-cells = <2>;
+    #size-cells = <2>;
+    compatible = "simple-bus";
+    ranges ;
+    axi_dma_0: dma@80001000 {
+        #dma-cells = <1>;
+        clock-names = "s_axi_lite_aclk", "m_axi_sg_aclk", "m_axi_s2mm_aclk";
+        clocks = <&clk 71>, <&clk 71>, <&clk 71>;
+        compatible = "xlnx,axi-dma-7.1", "xlnx,axi-dma-1.00.a";
+        interrupt-names = "s2mm_introut";
+        interrupt-parent = <&gic>;
+        interrupts = <0 89 4>;
+        reg = <0x0 0x80001000 0x0 0x1000>;
+        xlnx,addrwidth = <0x28>;
+        xlnx,include-sg ;
+        xlnx,sg-length-width = <0x1a>;
+        dma-channel@80001030 {
+            compatible = "xlnx,axi-dma-s2mm-channel";
+            dma-channels = <0x1>;
+            interrupts = <0 89 4>;
+            xlnx,datawidth = <0x20>;
+            xlnx,device-id = <0x0>;
+        };
+    };
+    axi_gpio_0: gpio@80000000 {
+        #gpio-cells = <3>;
+        clock-names = "s_axi_aclk";
+        clocks = <&clk 71>;
+        compatible = "xlnx,axi-gpio-2.0", "xlnx,xps-gpio-1.00.a";
+        gpio-controller ;
+        reg = <0x0 0x80000000 0x0 0x1000>;
+        xlnx,all-inputs = <0x0>;
+        xlnx,all-inputs-2 = <0x0>;
+        xlnx,all-outputs = <0x1>;
+        xlnx,all-outputs-2 = <0x0>;
+        xlnx,dout-default = <0x00000001>;
+        xlnx,dout-default-2 = <0x00000000>;
+        xlnx,gpio-width = <0x1>;
+        xlnx,gpio2-width = <0x20>;
+        xlnx,interrupt-present = <0x0>;
+        xlnx,is-dual = <0x0>;
+        xlnx,tri-default = <0xFFFFFFFF>;
+        xlnx,tri-default-2 = <0xFFFFFFFF>;
+    };
+    psu_ctrl_ipi: PERIPHERAL@ff380000 {
+        compatible = "xlnx,PERIPHERAL-1.0";
+        reg = <0x0 0xff380000 0x0 0x80000>;
+    };
+    psu_message_buffers: PERIPHERAL@ff990000 {
+        compatible = "xlnx,PERIPHERAL-1.0";
+        reg = <0x0 0xff990000 0x0 0x10000>;
+    };
+    axidma_chrdev {
+        compatible = "xlnx,axidma-chrdev";
+        dma-names = "axidma-tx_channel";
+        dmas = <&axi_dma_0 0 
+        &axi_dma_0 1>;
+    };
+};
+};

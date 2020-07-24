@@ -1,14 +1,9 @@
-FROM ubuntu:16.04
+FROM ubuntu:18.04
 
-MAINTAINER z4yx <z4yx@users.noreply.github.com>
-
-# build with docker build --build-arg PETA_VERSION=2018.1 --build-arg PETA_RUN_FILE=petalinux-v2018.1-final-installer.run -t petalinux:2018.1 .
-
-ARG UBUNTU_MIRROR=mirror.tuna.tsinghua.edu.cn
+ARG UBUNTU_MIRROR=ubuntu
 
 #install dependences:
-RUN sed -i.bak s/archive.ubuntu.com/${UBUNTU_MIRROR}/g /etc/apt/sources.list && \
-  dpkg --add-architecture i386 && apt-get update &&  DEBIAN_FRONTEND=noninteractive apt-get install -y -q \
+RUN dpkg --add-architecture i386 && apt-get update &&  DEBIAN_FRONTEND=noninteractive apt-get install -y -q \
   build-essential \
   sudo \
   tofrodos \
@@ -52,6 +47,7 @@ RUN sed -i.bak s/archive.ubuntu.com/${UBUNTU_MIRROR}/g /etc/apt/sources.list && 
   rsync \
   bc \
   u-boot-tools \
+  python-minimal \
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/*
 
@@ -64,6 +60,8 @@ RUN locale-gen en_US.UTF-8 && update-locale
 RUN adduser --disabled-password --gecos '' vivado && \
   usermod -aG sudo vivado && \
   echo "vivado ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
+
+RUN alias python=python2
 
 COPY accept-eula.sh ${PETA_RUN_FILE} /
 

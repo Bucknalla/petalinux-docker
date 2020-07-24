@@ -1,0 +1,3 @@
+[submodule "drivers/axi_dma"]
+	path = drivers/axi_dma
+	url = git@github.com:bperez77/xilinx_axidma.git

@@ -1,0 +1,4 @@
+all:
+{
+	[destination_device = pl] /home/vivado/project/rtl/xilinx/zc104.sdk/design_1_wrapper.bit
+}

@@ -1,0 +1,30 @@
+#-----------------------------------------------------------
+# Vivado v2018.3 (64-bit)
+# SW Build 2404976 on Wed Dec  5 18:13:43 MST 2018
+# IP Build 2404404 on Wed Dec  5 20:35:07 MST 2018
+# Start of session at: Thu Dec  6 04:28:39 2018
+# Process ID: 185684
+# Current directory: /tmp/tmp.Pzp5jNYKhl/temp/project_1.runs/design_1_m00_regslice_1_synth_1
+# Command line: vivado -log design_1_m00_regslice_1.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source design_1_m00_regslice_1.tcl
+# Log file: /tmp/tmp.Pzp5jNYKhl/temp/project_1.runs/design_1_m00_regslice_1_synth_1/design_1_m00_regslice_1.vds
+# Journal file: /tmp/tmp.Pzp5jNYKhl/temp/project_1.runs/design_1_m00_regslice_1_synth_1/vivado.jou
+#-----------------------------------------------------------
+INFO: [Common 17-1460] Use of init.tcl in /tmp/tmp.Pzp5jNYKhl/dummy.tcl is deprecated. Please use Vivado_init.tcl 
+Sourcing tcl script '/tmp/tmp.Pzp5jNYKhl/dummy.tcl'
+80 Beta devices matching pattern found, 80 enabled.
+source design_1_m00_regslice_1.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/tmp/tmp.Pzp5jNYKhl/ip'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/proj/xbuilds/2018.3_1205_1745/installs/lin64/Vivado/2018.3/data/ip'.
+WARNING: [IP_Flow 19-1663] Duplicate IP found for 'xilinx.com:ip:vcu_ddr4_controller:1.0'. The one found in IP location '/tmp/tmp.Pzp5jNYKhl/ip/vcu_ddr4_controller_v1_0' will take precedence over the same IP in the Xilinx installed IP.
+WARNING: [IP_Flow 19-1663] Duplicate IP found for 'xilinx.com:ip:vcu:1.0'. The one found in IP location '/tmp/tmp.Pzp5jNYKhl/ip/vcu_v1_0.v2.mcp_fix' will take precedence over the same IP in the Xilinx installed IP.
+WARNING: [IP_Flow 19-4830] Duplicate Interface found for 'xilinx.com:user:hsams_data_source_ctrl:1.0'. The one found in location '/tmp/tmp.Pzp5jNYKhl/ip/usp_rf_data_converter_v1_1/interfaces/hsams_data_source_ctrl.xml' will take precedence over the same Interface in location '/proj/xbuilds/2018.3_1205_1745/installs/lin64/Vivado/2018.3/data/ip/xilinx/usp_rf_data_converter_v2_1/interfaces/hsams_data_source_ctrl.xml'
+WARNING: [IP_Flow 19-4830] Duplicate Interface found for 'xilinx.com:display_usp_rf_data_converter:cal_freeze_pins:1.0'. The one found in location '/tmp/tmp.Pzp5jNYKhl/ip/usp_rf_data_converter_v1_1/interfaces/cal_freeze_pins.xml' will take precedence over the same Interface in location '/proj/xbuilds/2018.3_1205_1745/installs/lin64/Vivado/2018.3/data/ip/xilinx/usp_rf_data_converter_v2_1/interfaces/cal_freeze_pins.xml'
+WARNING: [IP_Flow 19-4830] Duplicate Interface found for 'xilinx.com:display_usp_rf_data_converter:diff_pins:1.0'. The one found in location '/tmp/tmp.Pzp5jNYKhl/ip/usp_rf_data_converter_v1_1/interfaces/diff_pins.xml' will take precedence over the same Interface in location '/proj/xbuilds/2018.3_1205_1745/installs/lin64/Vivado/2018.3/data/ip/xilinx/usp_rf_data_converter_v2_1/interfaces/diff_pins.xml'
+WARNING: [IP_Flow 19-4830] Duplicate Interface found for 'xilinx.com:display_usp_rf_data_converter:rts_pins:1.0'. The one found in location '/tmp/tmp.Pzp5jNYKhl/ip/usp_rf_data_converter_v1_1/interfaces/rts_pins.xml' will take precedence over the same Interface in location '/proj/xbuilds/2018.3_1205_1745/installs/lin64/Vivado/2018.3/data/ip/xilinx/usp_rf_data_converter_v2_1/interfaces/rts_pins.xml'
+WARNING: [IP_Flow 19-4830] Duplicate Interface found for 'xilinx.com:display_usp_rf_data_converter:debug_pins:1.0'. The one found in location '/tmp/tmp.Pzp5jNYKhl/ip/usp_rf_data_converter_v1_1/interfaces/debug_pins.xml' will take precedence over the same Interface in location '/proj/xbuilds/2018.3_1205_1745/installs/lin64/Vivado/2018.3/data/ip/xilinx/usp_rf_data_converter_v2_1/interfaces/debug_pins.xml'
+WARNING: [IP_Flow 19-4830] Duplicate Interface found for 'xilinx.com:display_usp_rf_data_converter:drp_mon_pins:1.0'. The one found in location '/tmp/tmp.Pzp5jNYKhl/ip/usp_rf_data_converter_v1_1/interfaces/drp_mon_pins.xml' will take precedence over the same Interface in location '/proj/xbuilds/2018.3_1205_1745/installs/lin64/Vivado/2018.3/data/ip/xilinx/usp_rf_data_converter_v2_1/interfaces/drp_mon_pins.xml'
+WARNING: [IP_Flow 19-4830] Duplicate Interface found for 'xilinx.com:user:hsams_data_sink_ctrl:1.0'. The one found in location '/tmp/tmp.Pzp5jNYKhl/ip/usp_rf_data_converter_v1_1/interfaces/hsams_data_sink_ctrl.xml' will take precedence over the same Interface in location '/proj/xbuilds/2018.3_1205_1745/installs/lin64/Vivado/2018.3/data/ip/xilinx/usp_rf_data_converter_v2_1/interfaces/hsams_data_sink_ctrl.xml'
+update_ip_catalog: Time (s): cpu = 00:00:04 ; elapsed = 00:00:08 . Memory (MB): peak = 1469.570 ; gain = 28.117 ; free physical = 10467 ; free virtual = 515256
+INFO: [IP_Flow 19-4838] Using cached IP synthesis design for IP design_1_m00_regslice_1, cache-ID = aee99481c6ec2704.
+INFO: [Common 17-206] Exiting Vivado at Thu Dec  6 04:28:56 2018...
